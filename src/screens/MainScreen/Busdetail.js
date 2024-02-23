@@ -68,7 +68,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
-        <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
+        {/* <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
           <IconComponent
             name="angle-left"
             size={20}
@@ -76,7 +76,7 @@ const App = () => {
             style={styles.iconStyle}
           />
           <Text style={styles.backTitle}>Back</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text style={styles.headerTitle}>Bus Details</Text>
       </View>
       <View >
