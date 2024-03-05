@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-  
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -18,14 +17,14 @@ export default function Availablebus() {
   const handleBackPress = () => {
     navigation.goBack();
   };
-  const handleViewDetail=()=>{
+  const handleViewDetail = () => {
     navigation.navigate('detail');
-   };
+  };
   let IconComponent = FontAwesome5;
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity onPress={handleBackPress} style={styles.backbutton}>
-        <IconComponent
+        <FontAwesome5
           name="angle-left"
           size={20}
           color="black"
@@ -261,7 +260,7 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    height: "26%",
+    height: '26%',
   },
   bustitle: {
     color: 'black',
@@ -309,11 +308,11 @@ const styles = StyleSheet.create({
   businfo: {},
   detailbtn: {
     height: '80%',
-    width: "100%",
+    width: '100%',
     borderRadius: 10,
     borderWidth: 1.5,
     borderColor: Color.primary,
-    alignItems: "center",
+    alignItems: 'center',
   },
   detailbtncontainer: {
     width: '100%',
@@ -324,5 +323,5 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontWeight: '500',
     fontSize: 16,
-  }
+  },
 });

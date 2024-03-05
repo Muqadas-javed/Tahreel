@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import style from '../styles';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon from '../../theme/Icons';
 const HTInput = ({
-  text,
   placeholder,
   styles,
   handleTextChange,

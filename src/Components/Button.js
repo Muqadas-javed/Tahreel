@@ -1,38 +1,29 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Color from '../theme/colors/Color';
-import styles from './styles';
-const CustomButton = ({
-  onClick,
-  textSize,
-  buttonType = 'border',
-  borderColor = Color.primary,
-  backgroundColor,
-  textColor = Colorswhite,
-  family,
-  style,
-  width=width,
-  height=height,
-}) => {
-  const textStyle = {
-    fontFamily: family,
-    color: textColor,
-    fontSize: textSize,
-  };
-  const containerStyle = {
-    backgroundColor,
-    height: Dimensions.get('window').height * 0.05,
-    width : Dimensions.get('window').width * 0.8,
-    ...(buttonType === 'border' && {borderColor, borderWidth: 1}),
-    ...(buttonType === 'fill' && {backgroundColor}),
-  };
+const CustomButton = ({ title, onPress, style }) => {
   return (
-    <TouchableOpacity
-      style={[style, styles.container, containerStyle]}
-      onPress={() => onClick()}>
-      <Text style={[styles.text, textStyle]}>{text}</Text>
+    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+      <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
 };
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: Color.primary,
+    padding: 10,
+    borderRadius: 7,
+    alignItems: 'center',
+    alignContent:'center',
+    alignSelf:'center',
+    marginVertical: 10,
+    marginBottom:20,
+    
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 20,
+  },
+});
 
 export default CustomButton;

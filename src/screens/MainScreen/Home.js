@@ -5,18 +5,14 @@ import {
   TouchableOpacity,
   StyleSheet,
   ImageBackground,
-  Button,
   TextInput,
 } from 'react-native';
 import Images from '../../assets/Images';
-import DropDownPicker from 'react-native-dropdown-picker';
 import DatePicker from 'react-native-date-picker';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import Modal from 'react-native-modal';
 import SwitchSelector from 'react-native-switch-selector';
 import {useFocusEffect} from '@react-navigation/native';
-import CustomButton from '../../Components/Button';
 import Color from '../../theme/colors/Color';
 const HomeScreen = ({navigation}) => {
   const [date1, setDate1] = useState(new Date());

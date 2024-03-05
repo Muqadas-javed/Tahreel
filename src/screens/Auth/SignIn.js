@@ -42,80 +42,59 @@ const Signin = () => {
         Sign up and get instant booking confirmations and updates right to your
         fingertips!
       </Text>
-      <Textfield text={'User Name'} styles={styles.title} size={16}/>
+      <Textfield text={'User Name'} styles={styles.title} size={16} />
       <View style={styles.inputContainer}>
-        {/* <TextInput
-          style={styles.input}
-          placeholder="User Name"
-          placeholderTextColor="grey"
-        />
-        <Icon name="user-circle" size={20} style={styles.icon} /> */}
         <HTInput
           isIcon={true}
           placeholder="User Name"
           textColor="grey"
           name={'user-circle'}
           type={'font-awesome'}
+          styles={styles.input}
         />
       </View>
-      <Textfield text={'Email ID'} styles={styles.title} size={16}/>
+      <Text style={styles.title}>Email</Text>
       <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Emai ID"
-          placeholderTextColor="grey"
-          onChangeText={text => setEmail(text)}
+        <HTInput
+          isIcon={true}
+          placeholder="Enter Your Email"
           value={email}
-          keyboardType="email-address"
-          autoCapitalize="none"
-        />
-        <Icon name="envelope" size={20} style={styles.icon} />
-      </View>
-      <Textfield text={'Password'} styles={styles.title} size={16}/>
+          textColor="grey"
+          handleTextChange={text => setEmail(text)}
+          name={'envelope'}
+          type={'font-awesome'}
+          keyboardType={'email-address'}
+          styles={styles.input}
+        /></View>
+      <Textfield text={'Password'} styles={styles.title} size={16} />
       <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          placeholderTextColor="grey"
-          onChangeText={text => setPassword(text)}
+      <HTInput
+          isPssIcon={true}
+          placeholder="Enter Your Password"
+          textColor="grey"
+          handleTextChange={text => setPassword(text)}
           value={password}
-          secureTextEntry={!passwordVisible}
+          secureTextEntry={true}
+          styles={styles.input}
         />
-        <TouchableOpacity
-          style={styles.icon}
-          onPress={() => setPasswordVisible(!passwordVisible)}>
-          <Icon
-            name={passwordVisible ? 'eye-slash' : 'eye'}
-            size={20}
-            color="grey"
-          />
-        </TouchableOpacity>
       </View>
-      <Textfield text={'Confirm Password'} styles={styles.title} size={16}/>
+      <Textfield text={'Confirm Password'} styles={styles.title} size={16} />
       <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Confirm Password"
-          placeholderTextColor="grey"
-          onChangeText={text => setConfirmPassword(text)}
+      <HTInput
+          isPssIcon={true}
+          placeholder="Enter Your Password"
+          textColor="grey"
+          handleTextChange={text => setConfirmPassword(text)}
           value={confirmPassword}
-          secureTextEntry={!passwordVisible}
+          secureTextEntry={true}
+          styles={styles.input}
         />
-        <TouchableOpacity
-          style={styles.icon}
-          onPress={() => setPasswordVisible(!passwordVisible)}>
-          <Icon
-            name={passwordVisible ? 'eye-slash' : 'eye'}
-            size={20}
-            color="grey"
-          />
-        </TouchableOpacity>
       </View>
 
       <TouchableOpacity
-      activeOpacity={0.8}
+        activeOpacity={0.8}
         style={styles.SignupButton}
-        onPress={handleSignUpNavigation}
+        onPress={handleSignUp}
         disabled={!isSignupEnabled}>
         <Text style={styles.SignupButtonText}>Register</Text>
       </TouchableOpacity>
@@ -133,6 +112,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    paddingHorizontal:10,
   },
   logoimage: {
     width: 150,
@@ -145,7 +125,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 28,
     fontWeight: '500',
-    paddingBottom: 50,
+    paddingBottom: 30,
     lineHeight: 24,
   },
   title: {
@@ -153,7 +133,6 @@ const styles = StyleSheet.create({
     color: 'black',
     paddingLeft: 30,
     fontWeight: '400',
-    paddingBottom: 2,
   },
   inputContainer: {
     flexDirection: 'row',

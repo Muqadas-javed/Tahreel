@@ -47,18 +47,6 @@ const LoginScreen = () => {
           number
         </Text>
         <Text style={styles.title}>Email</Text>
-        {/* <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter Your Email"
-          placeholderTextColor="grey"
-          onChangeText={text => setEmail(text)}
-          value={email}
-          keyboardType="email-address"
-          autoCapitalize="none"
-        />
-        <Icon name="envelope" size={20} style={styles.icon} />
-      </View> */}
         <HTInput
           isIcon={true}
           placeholder="Enter Your Email"
@@ -68,18 +56,18 @@ const LoginScreen = () => {
           name={'envelope'}
           type={'font-awesome'}
           keyboardType={'email-address'}
+          styles={styles.InputField}
         />
         <Text style={styles.title}>Password</Text>
          <HTInput
           isPssIcon={true}
           placeholder="Enter Your Password"
-          // value={password}
           textColor="grey"
           handleTextChange={text => setPassword(text)}
           value={password}
           secureTextEntry={true}
+          styles={styles.InputField}
         />
-       
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.loginButton}
@@ -112,19 +100,18 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 28,
     fontWeight: '500',
-    paddingBottom: 50,
+    paddingBottom: 30,
   },
   title: {
     fontSize: 16,
     color: 'black',
-    paddingLeft: 30,
+    paddingLeft: 25,
     fontWeight: '500',
-    padding:4,
+    paddingTop:24,
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
     justifyContent: 'center',
   },
   input: {
@@ -132,7 +119,6 @@ const styles = StyleSheet.create({
     width: '85%',
     borderColor: 'gray',
     borderWidth: 0.7,
-    marginBottom: 15,
     paddingLeft: 10,
     borderRadius: 13,
     color: 'grey',
@@ -152,6 +138,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 30,
     marginTop: 40,
+  },
+  InputField:{
+    marginHorizontal:20,
+    borderRadius: 10,
+    borderWidth: 0.5,
+    paddingLeft:10,
+    color:'black'
   },
   loginButtonText: {
     color: 'white',

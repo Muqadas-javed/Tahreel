@@ -4,26 +4,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 0.5,
-    width:'85%',
-    marginTop:10,
-    alignContent:'center',
-    alignSelf:'center',
-    marginHorizontal:20
-    
+    marginTop: 10,
   },
   input: {
-    fontFamily:'regular',
+    fontFamily: 'regular',
     fontSize: 14,
-    width:'90%',
-    color:"black",
-    paddingHorizontal:15, 
-      },
+    color: 'black',
+    width: '90%',
+  },
   icon: {
     // position: 'absolute',
     color: 'grey',
-    paddingRight:15,
+    paddingRight: 15,
   },
 });
 export default styles;

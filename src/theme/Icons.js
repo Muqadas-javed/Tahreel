@@ -17,8 +17,6 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 import { Component } from "react";
 import Color from "./colors/Color";
-// import { Colors } from "../../theme";
-
 class Icon extends Component {
   _getIconType(type) {
     switch (type) {
@@ -41,7 +39,7 @@ class Icon extends Component {
       case "font-awesome":
         return FAIcon;
       case "font-awesome5":
-        return FAIcon5;
+        return FA5Icon;
       case "simple-line-icon":
         return SimpleLineIcon;
       case "ant-design":

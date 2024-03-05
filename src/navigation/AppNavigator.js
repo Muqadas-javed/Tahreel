@@ -11,7 +11,18 @@ import NotificationScreen from '../screens/MainScreen/Notifications';
 import ProfileScreen from '../screens/MainScreen/Profile';
 import Availablebus from '../screens/MainScreen/Availablebus';
 import Busdetail from '../screens/MainScreen/Busdetail';
+import CardDetail from '../screens/MainScreen/CardDetail';
+import Payment from '../screens/MainScreen/Payment';
+import Color from '../theme/colors/Color';
+import Thankyou from '../screens/MainScreen/Thankyou';
+import Icon from '../theme/Icons';
+import ModifyFlight from '../screens/MainScreen/ModifyFlight';
+import { View } from 'react-native';
+import Tracking from '../screens/MainScreen/Tracking';
+// import { View } from 'react-native-reanimated/lib/typescript/Animated';
 const DashboardStack = createNativeStackNavigator();
+const BookingStack = createNativeStackNavigator();
+
 const DashboardStackScreens = () => (
   <DashboardStack.Navigator>
     <DashboardStack.Screen
@@ -29,30 +40,42 @@ const DashboardStackScreens = () => (
       component={Busdetail}
       options={{headerShown: false}}
     />
+    <DashboardStack.Screen
+      name={'CardDetail'}
+      component={CardDetail}
+      options={{headerShown: false}}
+    />
+    <DashboardStack.Screen
+      name={'Payment'}
+      component={Payment}
+      options={{headerShown: false}}
+    />
+    <DashboardStack.Screen
+      name={'Thank'}
+      component={Thankyou}
+      options={{headerShown: false}}
+    />
   </DashboardStack.Navigator>
 );
-
-// const AccountStack = createNativeStackNavigator();
-// const AccountStackScreens = () => (
-//   <AccountStack.Navigator>
-//     <AccountStack.Screen
-//       name={'Home'}
-//       component={HomeScreen}
-//       options={{headerShown: false}}
-//     />
-//   </AccountStack.Navigator>
-// );
-
-// const ServicesStack = createNativeStackNavigator();
-// const ServicesStackScreens = () => (
-//   <ServicesStack.Navigator>
-//     <ServicesStack.Screen
-//       name={'Home'}
-//       component={HomeScreen}
-//       options={{headerShown: false}}
-//     />
-//   </ServicesStack.Navigator>
-// );
+const BookingStackScreens= () => (
+  <BookingStack.Navigator>
+    <BookingStack.Screen
+      name={'Booking'}
+      component={BookingScreen}
+      options={{headerShown: false}}
+    />
+    <BookingStack.Screen
+      name={'ModifyFlight'}
+      component={ModifyFlight}
+      options={{headerShown: false}}
+    />
+    <BookingStack.Screen
+      name={'Tracking'}
+      component={Tracking}
+      options={{headerShown: false}}
+    />
+    </BookingStack.Navigator>
+    );
 
 function getTabBarVisibility(route) {
   const routeName = getFocusedRouteNameFromRoute(route);
@@ -61,7 +84,15 @@ function getTabBarVisibility(route) {
     routeName === 'Onboarding' ||
     routeName === 'Welcome' ||
     routeName === 'LoginScreen' ||
-    routeName === 'SigninScreen'
+    routeName === 'SigninScreen'||
+    routeName === 'Availablebus' ||
+    routeName === 'detail' ||
+    routeName === 'CardDetail' ||
+    routeName === 'Payment' ||
+    routeName === 'Thank' ||
+    routeName === 'ModifyFligh' ||
+    routeName === 'Tracking' 
+
   ) {
     return 'none';
   }
@@ -72,24 +103,31 @@ function getTabBarVisibility(route) {
 const Tabs = createBottomTabNavigator();
 export default () => {
   return (
+    <View style={{flex:1,backgroundColor:'white'}}>
+
     <Tabs.Navigator
       screenOptions={({route}) => ({
         tabBarStyle: {
           display: getTabBarVisibility(route),
-          height: 40,
+          height: 55,
+          borderTopRightRadius: 25,
+          borderTopLeftRadius: 25,
+          
         },
-        tabBarActiveTintColor: '#08B783',
-        tabBarInactiveTintColor: '#21775d',
+        tabBarActiveTintColor: Color.primary,
+        tabBarInactiveTintColor: '#08B783',
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           let IconComponent = FontAwesome5;
           switch (route.name) {
             case 'Home':
               iconName = 'home';
+              type='feather'
               break;
 
             case 'Booking':
               iconName = 'route';
+              type='font-awesome5'
               break;
 
             case 'Schedule':
@@ -103,10 +141,11 @@ export default () => {
               break;
           }
           return (
-            <IconComponent
+            <Icon
               name={iconName}
-              size={22}
-              color={focused ? '#08B783' : '#21775d'}
+              type={type}
+              size={24}
+              color={focused ? Color.primary : '#08B783'}
             />
           );
         },
@@ -119,7 +158,7 @@ export default () => {
       <Tabs.Screen
         name={'Booking'}
         options={{headerShown: false}}
-        component={BookingScreen}
+        component={BookingStackScreens}
       />
       <Tabs.Screen
         name={'Schedule'}
@@ -137,5 +176,6 @@ export default () => {
         component={ProfileScreen}
       />
     </Tabs.Navigator>
+    </View>
   );
 };

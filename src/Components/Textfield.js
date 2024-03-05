@@ -7,6 +7,7 @@ const Textfield = ({text, textColor = Color.black, fontfamily, size, styles}) =>
     fontFamily: fontfamily,
     fontSize: size,
     color: textColor,
+    
   };
   return <Text style={[styles, textStyle]}>{text}</Text>;
 };

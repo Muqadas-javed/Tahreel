@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -17,6 +17,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Color from '../../theme/colors/Color';
 import Images from '../../assets/Images';
 import Textfield from '../../Components/Textfield';
+import CustomButton from '../../Components/Button';
 
 const data = Array.from({length: 24}, (_, index) => index + 1);
 const App = () => {
@@ -28,12 +29,17 @@ const App = () => {
   const handleBackPress = () => {
     navigation.goBack();
   };
-  
+  const handlebookNow = () => {
+    navigation.navigate('CardDetail');
+  };
   const renderTouchableItem = item => (
     <TouchableOpacity
-      style={[styles.card, pressed ? styles.darkGreenCard : styles.greenCard]}
+      style={[
+        styles.card,
+        item === pressed ? styles.darkGreenCard : styles.greenCard,
+      ]}
       activeOpacity={0.1}
-      onPress={() => setPressed(!pressed)}>
+      onPress={() => setPressed(item)}>
       <Text style={styles.cardText}>{item}</Text>
     </TouchableOpacity>
   );
@@ -68,7 +74,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
-        {/* <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
+        <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
           <IconComponent
             name="angle-left"
             size={20}
@@ -76,10 +82,10 @@ const App = () => {
             style={styles.iconStyle}
           />
           <Text style={styles.backTitle}>Back</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
         <Text style={styles.headerTitle}>Bus Details</Text>
       </View>
-      <View >
+      <View>
         <ScrollView style={styles.scrollView}>
           <View style={styles.titlecontainer}>
             <Text style={styles.bustitle}>Al Makkah </Text>
@@ -164,12 +170,15 @@ const App = () => {
           </View>
           <Text style={styles.seattitle}>Choose your Seat</Text>
           <Image source={Images.wheel} style={styles.wheelimage}></Image>
-          <View style={{marginBottom:190}}>
-          <FlatList
-            data={groupedData}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={renderRow}
-          />
+          <View style={{marginBottom: 190}}>
+            <FlatList
+              data={groupedData}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={renderRow}
+            />
+            <View style={styles.booknowbth}>
+            <CustomButton title="Book Now" onPress={handlebookNow} />
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -320,15 +329,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
   },
   greenCard: {
-    backgroundColor: Color.primary,
+    backgroundColor: 'darkgreen',
+    opacity: 0.5,
   },
   darkGreenCard: {
     backgroundColor: 'darkgreen',
   },
   cardText: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 28,
+    fontWeight: '700',
   },
+  booknowbth:{
+    
+    alignContent:'center',
+    alignSelf:'center',
+    width:'80%',
+  }
 });
 
 export default App;

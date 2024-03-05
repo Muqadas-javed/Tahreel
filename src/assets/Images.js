@@ -10,6 +10,21 @@ const home = require('./image/Homescreen.png');
 const bus = require('./image/bus.png');
 const bus1 = require('./image/bus1.png');
 const wheel = require('./image/staring.png');
+const line = require('./image/Line.png');
+const dottedline = require('./image/dottedarrow.png');
+const master = require('./image/master.png');
+const paypal = require('./image/Paypal.png');
+const visa = require('./image/VisaC.png');
+const payment = require('./image/Payment.png');
+const card = require('./image/card.png');
+const map = require('./image/map.png');
+const map1 = require('./image/map1.png');
+const round = require('./image/round.png');
+const person = require('./image/person.png');
+const madina = require('./image/madina.png');
+const jaddah = require('./image/jaddah.png');
+const makkah = require('./image/makkah.png');
+
 export default {
   Onboard,
   Onboardbtn,
@@ -22,5 +37,19 @@ export default {
   home,
   bus,
   bus1,
-  wheel
+  wheel,
+  line,
+  dottedline,
+  master,
+  payment,
+  paypal,
+  visa,
+  card,
+  map,
+  map1,
+  round,
+  person,
+  jaddah,
+  madina,
+  makkah
 };
