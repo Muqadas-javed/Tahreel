@@ -20,7 +20,7 @@ const Payment = () => {
   };
   return (
     <KeyboardAwareScrollView style={styles.container}>
-      <MyHeader isTitle={true} title={'Payment'} />
+      <MyHeader isTitle={true} isButton={true} title={'Payment'} />
       <View style={styles.cardcontainer}>
         <Image source={Images.card} style={styles.cardImage} />
         <Textfield

@@ -55,6 +55,11 @@ const DashboardStackScreens = () => (
       component={Thankyou}
       options={{headerShown: false}}
     />
+    <DashboardStack.Screen
+      name={'ProfileScreen'}
+      component={ProfileScreen}
+      options={{headerShown: false}}
+    />
   </DashboardStack.Navigator>
 );
 const BookingStackScreens= () => (

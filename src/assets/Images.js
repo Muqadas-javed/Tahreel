@@ -24,6 +24,11 @@ const person = require('./image/person.png');
 const madina = require('./image/madina.png');
 const jaddah = require('./image/jaddah.png');
 const makkah = require('./image/makkah.png');
+const stLine = require('./image/stLine.png');
+const favJou = require('./image/FavJourney.png');
+const User = require('./image/ProfileUser.png');
+const User1 = require('./image/user.png');
+
 
 export default {
   Onboard,
@@ -51,5 +56,10 @@ export default {
   person,
   jaddah,
   madina,
-  makkah
+  makkah,
+  stLine,
+  favJou,
+  User,
+  User1
+
 };

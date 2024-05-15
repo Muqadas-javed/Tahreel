@@ -11,6 +11,7 @@ import {useNavigation} from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Color from '../../theme/colors/Color';
 import Images from '../../assets/Images';
+import MyHeader from '../../Components/Header';
 
 export default function Availablebus() {
   const navigation = useNavigation();
@@ -23,15 +24,7 @@ export default function Availablebus() {
   let IconComponent = FontAwesome5;
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <TouchableOpacity onPress={handleBackPress} style={styles.backbutton}>
-        <FontAwesome5
-          name="angle-left"
-          size={20}
-          color="black"
-          style={styles.iconstyle}
-        />
-        <Text style={styles.backtitle}>Back</Text>
-      </TouchableOpacity>
+      <MyHeader isTitle={false} isButton={true} title={'Modify Flight'} />
       <View style={styles.titlecontainer}>
         <Text style={styles.title}>Available Bus for ride</Text>
         <Text style={styles.subtitle}>18 buses found</Text>

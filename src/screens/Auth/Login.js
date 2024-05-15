@@ -32,6 +32,7 @@ const LoginScreen = () => {
       AsyncStorage.setItem('userInfo', JSON.stringify(info)).then(() => {
         console.log('Heyy!');
         dispatch({type: LOGIN_SUCCESS, payload: info});
+        // navigation.navigate('Main', {userName: 'John'});//
       });
     }
   };

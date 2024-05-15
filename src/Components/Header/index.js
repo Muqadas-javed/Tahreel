@@ -4,7 +4,7 @@ import Icon from '../../theme/Icons';
 import Textfield from '../Textfield';
 import {useNavigation} from '@react-navigation/native';
 
-const MyHeader = ({isTitle, title}) => {
+const MyHeader = ({isTitle, title, isButton}) => {
   const navigation = useNavigation();
 
   const handleBackPress = () => {
@@ -12,12 +12,13 @@ const MyHeader = ({isTitle, title}) => {
   };
   return (
     <View style={styles.headerContainer}>
+    {isButton ?(
       <TouchableOpacity
         onPress={() => handleBackPress()}
         style={styles.backbutton}>
         <Icon name={'left'} size={20} type={'ant-design'} color={'grey'} />
         <Textfield text={'Back'} styles={styles.backtxt} size={18} />
-      </TouchableOpacity>
+      </TouchableOpacity>): null }
       {isTitle ? (
         <View style={{width: '70%', alignItems: 'center'}}>
           <Textfield text={title} styles={styles.titletxt} size={20} />

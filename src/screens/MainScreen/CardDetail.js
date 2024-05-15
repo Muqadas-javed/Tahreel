@@ -26,7 +26,7 @@ const CardDetail = () => {
   return (
     <>
 
-      <MyHeader isTitle={true} title={'Request for Rent'} />
+      <MyHeader isTitle={true}isButton={true} title={'Request for Rent'} />
     <ScrollView style={styles.container}>
       <View style={styles.belowheader}>
         <Icon name={'location'} size={20} type={'ionicon'} color={'red'} />

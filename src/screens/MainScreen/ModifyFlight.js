@@ -25,7 +25,7 @@ const ModifyFlight = () => {
   };
   return (
     <View style={styles.container}>
-      <MyHeader isTitle={true} title={'Modify Flight'} />
+      <MyHeader isTitle={true} isButton={true} title={'Modify Flight'} />
       <Textfield text={'Current Bus'} size={20} styles={styles.busTitle} />
       <View style={styles.busDetailCard}>
         <View style={styles.busRoute}>

@@ -10,7 +10,7 @@ import Icon from '../../theme/Icons';
 const Tracking = () => {
   return (
     <View style={styles.container}>
-      <MyHeader isTitle={true} title={'Tracking'} />
+      <MyHeader isTitle={true} isButton={true} title={'Tracking'} />
       <ImageBackground source={Images.map} style={styles.backgroundImage}>
         <View style={styles.bottomView}>
           <View style={styles.peronImage}>
