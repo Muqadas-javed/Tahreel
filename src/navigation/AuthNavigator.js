@@ -4,6 +4,7 @@ import Onboarding from '../screens/Auth/Onboarding';
 import Welcome from '../screens/Auth/Welcome';
 import LoginScreen from '../screens/Auth/Login';
 import SigninScreen from '../screens/Auth/SignIn';
+import ProfileScreen from '../screens/MainScreen/Profile';
 const AuthStack = createNativeStackNavigator();
 const AuthNavigator = () => {
   return (
@@ -32,6 +33,13 @@ const AuthNavigator = () => {
       <AuthStack.Screen
         name={'SigninScreen'}
         component={SigninScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <AuthStack.Screen
+        name={'ProfileScreen'}
+        component={ProfileScreen}
         options={{
           headerShown: false,
         }}

@@ -16,6 +16,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Color from '../../theme/colors/Color';
 import Icon from '../../theme/Icons';
 import FlatListWithCard from '../../Components/Journey';
+import MyHeader from '../../Components/Header';
 const ScheduleScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const items = ['Makkah', 'Madina', 'Jaddah', 'Riyad', 'Tabuk'];
@@ -44,7 +45,7 @@ const ScheduleScreen = ({navigation}) => {
   };
   return (
     <ScrollView style={styles.container}>
-      <Textfield text={'Explore More'} size={24} styles={styles.headerTxt} />
+      <MyHeader isTitle={true} isButton={true} title={'Explore More'} />
       <Textfield text={'Search Buses'} size={18} styles={styles.searchBus} />
       <View style={styles.routeSearch}>
         <TouchableOpacity style={styles.dropdownButton} onPress={toggleModal}>
@@ -201,12 +202,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: 'white',
   },
-  headerTxt: {
-    color: 'black',
-    fontWeight: '400',
-    paddingVertical: 10,
-    textAlign: 'center',
-  },
   routeSearch: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -215,6 +210,7 @@ const styles = StyleSheet.create({
   },
   searchBus: {
     fontWeight: '500',
+    paddingTop:20,
   },
   routename: {
     color: 'black',

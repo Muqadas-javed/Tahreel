@@ -19,7 +19,6 @@ import Icon from '../theme/Icons';
 import ModifyFlight from '../screens/MainScreen/ModifyFlight';
 import { View } from 'react-native';
 import Tracking from '../screens/MainScreen/Tracking';
-// import { View } from 'react-native-reanimated/lib/typescript/Animated';
 const DashboardStack = createNativeStackNavigator();
 const BookingStack = createNativeStackNavigator();
 
